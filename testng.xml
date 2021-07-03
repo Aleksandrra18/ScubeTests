@@ -3,11 +3,6 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/home/ola/workspace/AppiumTests/MobileTests">
         <classes>
-            <class name="tests.BookCubeTest">
-                <methods>
-                    <include name="bookCube"/>
-                </methods>
-            </class>
             <class name="tests.NegativeLoginTest">
                 <methods>
                     <include name="loginWithInvalidCredentials"/>
@@ -16,12 +11,6 @@
             <class name="tests.PositiveLoginTest">
                 <methods>
                     <include name="loginWithValidCredentialsTest"/>
-                    <include name="loginWithGoogleAccount"/>
-                </methods>
-            </class>
-            <class name="tests.UserRegistrationTest">
-                <methods>
-                    <include name="userRegisterWithSuccess"/>
                 </methods>
             </class>
         </classes>
