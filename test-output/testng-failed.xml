@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [All Test Suite]">
+  <test thread-count="5" name="/home/ola/workspace/AppiumTests/MobileTests(failed)">
+    <classes>
+      <class name="tests.PositiveLoginTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="loginWithGoogleAccount"/>
+          <include name="tearDown"/>
+          <include name="getDriver"/>
+        </methods>
+      </class> <!-- tests.PositiveLoginTest -->
+    </classes>
+  </test> <!-- /home/ola/workspace/AppiumTests/MobileTests(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
