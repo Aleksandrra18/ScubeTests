@@ -34,7 +34,6 @@ public class AppiumServer {
                 .usingAnyFreePort()
                 .usingDriverExecutable(new File("/usr/local/bin/node"))
                 .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
-                .withLogFile(new File(System.getProperty("user.dir") + "/src/test/resources/logs/log.txt"))
                 .withArgument(GeneralServerFlag.LOCAL_TIMEZONE));
         return service;
     }
