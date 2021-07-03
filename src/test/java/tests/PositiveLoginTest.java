@@ -5,7 +5,8 @@ import pages.HomePage;
 
 public class PositiveLoginTest extends BaseTest{
 
-    @Test
+
+    @Test(description = "User log in with valid credentials")
     public void loginWithValidCredentialsTest(){
         HomePage homePage = new HomePage();
         homePage.skipWelcomeMenu()
@@ -16,7 +17,8 @@ public class PositiveLoginTest extends BaseTest{
                 .verifyingIfAvailabilityButtonIsDisplayed();
     }
 
-    @Test
+
+    @Test(description = "User log in with Google account")
     public void loginWithGoogleAccount(){
         HomePage homePage = new HomePage();
         homePage.skipWelcomeMenu()

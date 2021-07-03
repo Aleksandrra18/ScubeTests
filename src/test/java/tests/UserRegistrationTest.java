@@ -5,7 +5,7 @@ import pages.HomePage;
 
 public class UserRegistrationTest extends BaseTest {
 
-    @Test
+    @Test(description = "User register with success")
     public void userRegisterWithSuccess() throws InterruptedException {
         HomePage homePage = new HomePage();
         homePage.skipWelcomeMenu()

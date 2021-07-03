@@ -5,6 +5,7 @@ import assrtions.AssertWebElement;
 import driverManager.DriverManager;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.qameta.allure.Step;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import waits.WaitForElement;
@@ -37,6 +38,7 @@ public class LogInPage extends BasePage {
     @FindBy(xpath = "//*[@content-desc = 'Register here' or @content-desc ='Zarejestruj się']")
     private MobileElement registerHereButton;
 
+    @Step("Entering login and password")
     public LogInPage enterLoginAndPassword(String login, String password){
         WaitForElement.waitUntilElementIsVisible(emailInput);
         Actions actions = new Actions(DriverManager.getWebDriver());
@@ -48,6 +50,7 @@ public class LogInPage extends BasePage {
         return this;
     }
 
+    @Step("Login by with Google acoount")
     public HomePage loginWithGoogleAccount(){
         WaitForElement.waitUntilElementIsVisible(loginWithGoogle);
         loginWithGoogle.click();
@@ -56,6 +59,7 @@ public class LogInPage extends BasePage {
         return new HomePage();
     }
 
+    @Step("Clicking on login button")
     public HomePage clickGreenLoginButton(){
         MobileElement loginButton = clickButtons.get(2);
         WaitForElement.waitUntilElementIsClickable(loginButton);
@@ -69,6 +73,7 @@ public class LogInPage extends BasePage {
         return this;
     }
 
+    @Step("Clicking on register here button")
     public RegisterFormPage clickRegisterHereButton(){
         WaitForElement.waitUntilElementIsClickable(registerHereButton);
         Actions actions = new Actions(DriverManager.getWebDriver());

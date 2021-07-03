@@ -7,6 +7,7 @@ import io.appium.java_client.FindsByAndroidUIAutomator;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,6 +39,7 @@ public class CubeCalendar extends BasePage {
     @FindBy(xpath = "//android.widget.Button[@content-desc='Sprawdź dostępność']")
     private WebElement checkAvailability;
 
+    @Step("Picking random booking date in calendar")
     public CubeCalendar pickBookingDate() {
         String monthToScroll = getMonthToScroll();
         AndroidKeysAction.scrollToText(monthToScroll);
@@ -51,6 +53,7 @@ public class CubeCalendar extends BasePage {
         return this;
     }
 
+    @Step("Picking random booking hour in calendar page")
     public CubeCalendar pickBookingHours(){
         WaitForElement.waitUntilElementIsClickable(buttonsIndex7.get(1));
         buttonsIndex7.get(1).click();
@@ -68,7 +71,6 @@ public class CubeCalendar extends BasePage {
         LocalDate date = LocalDate.now();
         return date.plusMonths(1).getMonth().getDisplayName(TextStyle.FULL_STANDALONE, polishLocale) + " " + date.getYear();
     }
-
 
     private int[] pickRandomBookingDays() {
         Random random = new Random();

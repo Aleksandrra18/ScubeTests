@@ -6,7 +6,7 @@ import pages.LogInPage;
 
 public class NegativeLoginTest extends BaseTest{
 
-    @Test
+    @Test(description = "User log in with invalid credentials")
     public void loginWithInvalidCredentials() {
         HomePage homePage = new HomePage();
         homePage.skipWelcomeMenu()

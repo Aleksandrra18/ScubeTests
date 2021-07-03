@@ -3,6 +3,8 @@ package server;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import io.qameta.allure.Step;
+
 import java.io.File;
 import java.net.URL;
 import java.util.HashMap;
@@ -12,6 +14,7 @@ public class AppiumServer {
 
     private static AppiumDriverLocalService service;
 
+    @Step("Initializing appium server")
     public static AppiumDriverLocalService startAppiumServer(){
         if(AppiumServer.service == null){
             initAppiumService().start();
@@ -36,6 +39,7 @@ public class AppiumServer {
         return service;
     }
 
+    @Step("Stopping appium server")
     public static void stop(){
         initAppiumService().stop();
         service = null;
