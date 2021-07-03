@@ -28,6 +28,7 @@ public class AppiumServer {
         env.put("ANDROID_HOME", "/home/ola/Android/Sdk");
         service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
                 .withEnvironment(env)
+                .usingAnyFreePort()
                 .usingDriverExecutable(new File("/usr/local/bin/node"))
                 .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
                 .withLogFile(new File(System.getProperty("user.dir") + "/src/test/resources/logs/log.txt"))
@@ -37,5 +38,6 @@ public class AppiumServer {
 
     public static void stop(){
         initAppiumService().stop();
+        service = null;
     }
 }
